@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.phonegapspain.socialsharing" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>SocialSharing</name>
+    <name>Fridge</name>
     <description>
-        Hello World sample application that responds to the deviceready event.
+        Application to share food.
     </description>
     <author email="support@phonegap.com" href="http://phonegap.com">
-        PhoneGap Team
+        Green Line
     </author>
     <content src="index.html" />
     <preference name="permissions" value="none" />
@@ -23,6 +23,8 @@
     <preference name="disable-cursor" value="false" />
     <preference name="android-minSdkVersion" value="7" />
     <preference name="android-installLocation" value="auto" />
+
+    <platform name="android" />
 
     <gap:plugin name="org.apache.cordova.console" />
     <gap:plugin name="nl.x-services.plugins.socialsharing" version="4.3.8" />
