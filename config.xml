@@ -16,5 +16,5 @@
     <author href="https://build.phonegap.com" email="support@phonegap.com">
         Benjamin Oholeguy
     </author>
-
+    <platform name="android" />
 </widget>
