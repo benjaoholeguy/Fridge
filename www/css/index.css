@@ -1,0 +1,87 @@
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-color:#272727;
+    background-attachment:fixed;
+    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-size:12px;
+    height:100%;
+    margin:0px;
+    padding:0px;
+    width:100%;
+    overflow: hidden}
+
+.header{
+    background: #0085ad;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    line-height: 50px;
+    padding-top: 20px;
+    height: 50px}
+
+.buttonHeader{
+    text-align: center;
+    font-size: 30px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px}
+
+.buttonLeft{
+    float: left}
+
+.buttonRight{
+    float: right}
+
+#containerShare{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%}
+
+#contentShare{
+    position: absolute;
+    width: 100%;
+    margin-bottom: 5%;
+    bottom: 0px}
+
+.buttonShare{
+    background: #fff;
+    text-align: center;
+    font-weight: bold;
+    height: 40px;
+    border-radius: 5px;
+    line-height: 40px;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 5px}
+
+.buttonFacebook{
+    color: #5ea9dd}
+
+.buttonTwitter{
+    color: #3b5998}
+
+.buttonWhatsApp{
+    color: #3acb24}
+
+.buttonCancel{
+    color: #b61919}
+
+.centerContent{
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0)}
+
+.bottomContent{
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0)}
+
+.transition {
+    -webkit-transition-duration: .25s;
+    transition-duration: .25s}
