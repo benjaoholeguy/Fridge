@@ -8,12 +8,14 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <link rel="stylesheet" type="text/css" href="css/ionicons.min.css" />
-        <title>Test Social Sharing</title>
+        <link rel="stylesheet" type="text/css" href="css/estilo.css" />
+
+        <title>Fridge</title>
     </head>
     <body>
         <div class="header">
-            <div onclick="ups()" class="buttonHeader buttonLeft ion-navicon"></div>
-            Test Social Sharing
+            <div onclick="elmenu()" class="buttonHeader buttonLeft ion-navicon"></div>
+                Fridge
             <div onclick="openOptions()" class="buttonHeader buttonRight ion-share"></div>
         </div>
         <div id="containerShare" class="bottomContent transition">
@@ -24,7 +26,40 @@
                 <div onclick="closeOptions()" class="buttonShare buttonCancel">Cancelar</div>
             </div>
         </div>
+        <div id="wrapper">
+            <div id="menu">
+                <h4>Menu</h4>
+                <ul>
+                    <li onclick="menusel(this)">Messages</li>
+                    <li onclick="menusel(this)">Food List</li>
+                    <li onclick="menusel(this)">Food Upload</li>
+                    <li onclick="menusel(this)">Personal Data</li>
+                    <li onclick="menusel(this)">Ranking</li>
+
+
+                </ul>
+            </div>
+            <div id="content" class="">
+                <!--<div id="menutop">
+                    <img src="menu.png" width="40" onclick="elmenu();" />
+                    Mi aplicación
+                </div>-->
+                <div class="container">
+                    Content
+                    <div id="estado">Start content</div>
+                    <blockquote>
+                        This content doesn't change
+                    </blockquote>
+                    <p align="center">
+                        <img src="http://www.elsiglodetorreon.com.mx/files/foro/2015/05/555f53593ffdf.jpg" style="max-width:80%" />
+                    </p>
+                </div><!-- ./container -->
+            </div><!-- ./content -->
+            <!-- se sobrepone -->
+            <div class="lopen"></div>
+        </div>
         <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/zepto.min.js"></script>
         <script type="text/javascript" src="js/fastclick.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
     </body>
