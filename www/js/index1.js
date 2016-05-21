@@ -39,5 +39,5 @@ app = {
 };
 
 function validate(){
-    location.href="index2.html";
+    location.href="list.html";
 }

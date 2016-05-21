@@ -44,7 +44,11 @@ var cierramenu = function() {
 /* cuando elige alguna opción del menu... */
 var menusel = function(e) {
     cierramenu();
-    $("#estado").html($(e).text()+' Selected');
+    if ($(e).text()=="Food List"){
+        $("#estado").html(list());
+        //location.href="list.html";
+    }
+    //$("#estado").html($(e).text()+' Selected');
 };
 
 function openOptions(){
@@ -72,4 +76,17 @@ function share(expr){
       default:
         console.log("");
     }
+}
+
+function list(){
+
+    var ret='<div class="col-lg-12"><h1 class="page-header">Food</h1></div>';
+    for (var i=0; i<10; i++){
+        ret+='<div class="col-lg-3 col-md-4 col-xs-6 thumb">' +
+            '<a class="thumbnail" href="#">' +
+            '<img class="img-responsive" src="http://placehold.it/400x300" alt="">' +
+            '</a>' +
+            '</div>';
+    }
+    return ret;
 }
