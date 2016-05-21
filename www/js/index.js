@@ -44,8 +44,17 @@ var cierramenu = function() {
 /* cuando elige alguna opción del menu... */
 var menusel = function(e) {
     cierramenu();
+    if ($(e).text()=="Messages"){
+        $("#estado").html(contact());
+        //location.href="list.html";
+    }
     if ($(e).text()=="Food List"){
         $("#estado").html(list());
+        //location.href="list.html";
+    }
+    if ($(e).text()=="Personal Data"){
+        $("#estado").html(personal_data());
+        //$("#estado").html(contact());
         //location.href="list.html";
     }
     //$("#estado").html($(e).text()+' Selected');
@@ -84,9 +93,57 @@ function list(){
     for (var i=1; i<11; i++){
         ret+='<div class="col-lg-3 col-md-4 col-xs-6 thumb">' +
             '<a class="thumbnail" href="#">' +
-            '<img class="img-responsive" src="img/food/2.jpg" alt="">' +
+            '<img class="img-responsive" src="img/food/'+i+'.jpg" alt="">' +
             '</a>' +
             '</div>';
     }
+    return ret;
+}
+
+function contact(){
+    var ret='<div class="loginform col-xs-12">' +
+        '        <form id="f1">' +
+        '        <input placeholder="My Username" id="usr" type="text" class="form-control">' +
+        '        <textarea placeholder="Message" id="pass" class="form-control txta"></textarea>' +
+        '        <div class="form-add">' +
+        '        <input class="btn btn-default form-submit" type="button" onclick="validate()" id="login" value="Send">' +
+        '                    </div>' +
+
+        '    </form>' +
+        '    </div>';
+    return ret;
+}
+
+function personal_data(){
+    var ret='<div class="loginform col-xs-12">' +
+        '        <form id="f1">' +
+        '        <input placeholder="Username" id="usr" type="text" class="form-control">' +
+        ' <select id="usr" type="text" class="form-control sel">';
+    for(var i=1; i<32; i++){
+        ret+= '<option>'+i+'</option>';
+    }
+
+
+        ret+='</select>' +
+        '        <select id="usr" type="text" class="form-control sel">';
+    var meses=["January","February","March","April","May","June","July","August","September","October","November","December"];
+    for(var i=0; i<12; i++) {
+        ret+='<option>'+meses[i]+'</option>';
+    }
+        ret+='</select>' +
+        '        <select id="usr" type="text" class="form-control sel">' +
+        '<option>1970</option>' +
+        '<option>1971</option>' +
+        '</select>' +
+        '        <input id="email" placeholder="Email" type="text" class="form-control">' +
+        '        <input id="phone" placeholder="Phone number" type="text" class="form-control">' +
+        '        <input id="address" placeholder="Address" type="text" class="form-control">' +
+
+        '        <div class="form-add">' +
+        '        <input class="btn btn-default form-submit" type="button" onclick="validate()" id="register" value="Submit">' +
+        '                    </div>' +
+
+        '    </form>' +
+        '    </div>';
     return ret;
 }
