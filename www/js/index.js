@@ -1,4 +1,3 @@
-$(function() { FastClick.attach(document.body); });
 
 
 var app = {
