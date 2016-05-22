@@ -27,7 +27,6 @@
     <platform name="android" />
 
     <gap:plugin name="org.apache.cordova.console" />
-    <plugin spec="https://github.com/Telerik-Verified-Plugins/BarcodeScanner.git" source="git" />
 
     <icon platform="android" src="img/fridge_icon.png" />
 
