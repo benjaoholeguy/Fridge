@@ -256,5 +256,5 @@ var ret='<div class="row">' +
 }
 
 function googlemaps(){
-    window.open('https://maps.google.com/','_blank','location=no')
+    window.open("https://www.google.co.nz/maps/dir/264+Whitney+Street,+Auckland/PAK'nSAVE+Mt+Albert,+Auckland,+Regi%C3%B3n+de+Auckland/@-36.9060588,174.6976587,15z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x6d0d46a1b67afffb:0x602aef6b8e46b7d7!2m2!1d174.7092177!2d-36.9194334!1m5!1m1!1s0x6d0d46c384ed334d:0x2254fe9f1fe9c0cf!2m2!1d174.706083!2d-36.8927003?hl=es-419",'_blank','location=no')
 }
