@@ -21,12 +21,12 @@ var elmenu = function() {
         $("#content").removeClass('menuopen');
         $(".lopen").removeClass('open');
         $("#menu").removeClass('menus');
-        $("#estado").html('cierra menu');
+        $("#estado").html('<img src="img/maps_img.png" width="100%" height="100%">');
     } else {
         $("#content").addClass('menuopen');
         $("#menu").addClass('menus');
         $(".lopen").addClass('open');
-        $("#estado").html('abre menu');
+        $("#estado").html('<img src="img/maps_img.png" width="100%" height="100%">');
     }
 }
 /* cuando da click en un área diferente al menú */
@@ -37,7 +37,7 @@ var cierramenu = function() {
         $("#content").removeClass('menuopen');
         $(".lopen").removeClass('open');
         $("#menu").removeClass('menus');
-        $("#estado").html('cierra menu');
+        $("#estado").html('<img src="img/maps_img.png" width="100%" height="100%">');
     }
     $(".lopen").removeClass('open');
 };
@@ -239,8 +239,8 @@ var ret='<div class="row">' +
     '<img src="img/cucumber.png"width="20" height="30">' +
     '<img src="img/cucumber.png"width="20" height="30">' +
     '<img src="img/cucumber.png"width="20" height="30">' +
-    '        <div onclick="userProfile(this)">Name of the user <img onclick="googlemaps()" src="img/google_maps.jpg"width="13%" height="13%">' +
-    '<img onclick="contactar()" src="img/IMG_4756.JPG"width="12%" height="12%"></div></div></h3>' +
+    '        <div onclick="userProfile(this)">Name of the user <img onclick="googlemaps()" src="img/google_maps.jpg"width="16%" height="16%">' +
+    '<img onclick="contactar()" src="img/IMG_4756.JPG"width="15%" height="15%"></div></div></h3>' +
 
     '    <h4><div class="ranking">' +
 
