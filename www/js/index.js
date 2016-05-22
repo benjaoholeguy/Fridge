@@ -235,12 +235,12 @@ var ret='<div class="row">' +
     '        </a>' +
     '        </div>' +
     '        <div class="col-md-5">' +
-    '<h3><img src="img/cucumber.jpg"width="30" height="30">' +
-    '<img src="img/cucumber.jpg"width="30" height="30">' +
-    '<img src="img/cucumber.jpg"width="30" height="30">' +
-    '<img src="img/cucumber.jpg"width="30" height="30">' +
-    '        <div onclick="userProfile(this)">Name of the user <img onclick="googlemaps()" src="img/google_maps.jpg"width="85" height="60">' +
-    '<img onclick="contactar()" src="img/IMG_4756.JPG"width="72" height="72"></div></div></h3>' +
+    '<h3><img src="img/cucumber.png"width="20" height="30">' +
+    '<img src="img/cucumber.png"width="20" height="30">' +
+    '<img src="img/cucumber.png"width="20" height="30">' +
+    '<img src="img/cucumber.png"width="20" height="30">' +
+    '        <div onclick="userProfile(this)">Name of the user <img onclick="googlemaps()" src="img/google_maps.jpg"width="13%" height="13%">' +
+    '<img onclick="contactar()" src="img/IMG_4756.JPG"width="12%" height="12%"></div></div></h3>' +
 
     '    <h4><div class="ranking">' +
 
