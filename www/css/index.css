@@ -3,18 +3,7 @@
 }
 
 body {
-    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
-    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
-    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#272727;
-    background-attachment:fixed;
-    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
-    font-size:12px;
-    height:100%;
-    margin:0px;
-    padding:0px;
-    width:100%;
-    overflow: hidden}
+    }
 
 .header{
     background: #0085ad;
@@ -62,17 +51,7 @@ body {
     margin: auto;
     margin-bottom: 5px}
 
-.buttonFacebook{
-    color: #5ea9dd}
 
-.buttonTwitter{
-    color: #3b5998}
-
-.buttonWhatsApp{
-    color: #3acb24}
-
-.buttonCancel{
-    color: #b61919}
 
 .centerContent{
     -webkit-transform: translate3d(0, 0, 0);

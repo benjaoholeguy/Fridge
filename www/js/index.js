@@ -46,16 +46,16 @@ var menusel = function(e) {
     cierramenu();
     if ($(e).text()=="Messages"){
         $("#estado").html(contact());
-        //location.href="list.html";
+        //location.href="content.html";
     }
     if ($(e).text()=="Food List"){
         $("#estado").html(list());
-        //location.href="list.html";
+        //location.href="content.html";
     }
     if ($(e).text()=="Personal Data"){
         $("#estado").html(personal_data());
         //$("#estado").html(contact());
-        //location.href="list.html";
+        //location.href="content.html";
     }
     //$("#estado").html($(e).text()+' Selected');
 };
@@ -90,13 +90,38 @@ function share(expr){
 function list(){
 
     var ret='<div class="col-lg-12"><h1 class="page-header">Food</h1></div>';
+    ret+='<div class="filter"></select>' +
+        '        <select onchange="changeFood(this)" id="zones" type="text" class="form-control sel">' +
+        '<option>Select your zone</option>';
+    var zones=["CBD","Blockhouse Bay","Ramuera","New Lynn","Albany","North Shore"];
+    for(var i=0; i<zones.length; i++) {
+        ret+='<option>'+zones[i]+'</option>';
+    }
+    ret+='</select>';
+    ret+='</select>' +
+    '        <select onchange="changeFood(this)" id="expires" type="text" class="form-control sel">' +
+    '<option>Expire Date</option>';
+    var expires=["Today","Tomorrow"];
+    for(var i=0; i<expires.length; i++) {
+        ret+='<option>'+expires[i]+'</option>';
+    }
+    ret+='</select>' +
+        '        <select onchange="changeFood(this)" id="category" type="text" class="form-control sel">' +
+        '<option>Category</option>';
+    var cat=["Meet","Fruit","Fish","Cereals"];
+    for(var i=0; i<cat.length; i++) {
+        ret+='<option>'+cat[i]+'</option>';
+    }
+    ret+='</select></div>';
+    ret+='<div id="tochange">';
     for (var i=1; i<11; i++){
         ret+='<div class="col-lg-3 col-md-4 col-xs-6 thumb">' +
             '<a class="thumbnail" href="#">' +
-            '<img class="img-responsive" src="img/food/'+i+'.jpg" alt="">' +
+            '<img onclick="selected('+i+')" class="img-responsive" src="img/food/'+i+'.jpg" alt="">' +
             '</a>' +
             '</div>';
     }
+    ret+='</div>';
     return ret;
 }
 
@@ -146,4 +171,90 @@ function personal_data(){
         '    </form>' +
         '    </div>';
     return ret;
+}
+
+function contactar(){
+    $("#estado").html(contact())
+}
+
+function changeFood(e){
+    var ret="";
+    if ($(e).attr('id')=='category'){
+        //alert($(e).attr('id'));
+
+
+        for (var i=4; i<8; i++){
+            ret+='<div class="col-lg-3 col-md-4 col-xs-6 thumb">';
+            ret+='<a class="thumbnail" href="#">' +
+                '<img onclick="selected('+i+')" class="img-responsive" src="img/food/'+i+'.jpg" alt="">' +
+                '</a>';
+            ret+= '</div>';
+        }
+
+        $('#tochange').empty();
+
+        $('#tochange').append(ret);
+    }
+    if ($(e).attr('id')=='expires'){
+        //alert($(e).attr('id'));
+
+
+        for (var i=6; i<11; i++){
+            ret+='<div class="col-lg-3 col-md-4 col-xs-6 thumb">';
+            ret+='<a class="thumbnail" href="#">' +
+                '<img onclick="selected('+i+')" class="img-responsive" src="img/food/'+i+'.jpg" alt="">' +
+                '</a>';
+            ret+= '</div>';
+        }
+        $('#tochange').empty();
+
+        $('#tochange').append(ret);
+    }
+    if ($(e).attr('id')=='zones'){
+        //alert($(e).attr('id'));
+
+
+        for (var i=9; i<11; i++){
+            ret+='<div class="col-lg-3 col-md-4 col-xs-6 thumb">';
+            ret+='<a class="thumbnail" href="#">' +
+                '<img onclick="selected('+i+')" class="img-responsive" src="img/food/'+i+'.jpg" alt="">' +
+                '</a>';
+            ret+= '</div>';
+        }
+        $('#tochange').empty();
+
+        $('#tochange').append(ret);
+    }
+}
+
+function selected(i){
+var ret='<div class="row">' +
+    '        <div class="col-md-7">' +
+    '        <a href="#">' +
+    '        <img class="img-responsive" src="img/food/'+i+'.jpg" alt="">' +
+    '        </a>' +
+    '        </div>' +
+    '        <div class="col-md-5">' +
+    '<h3><img src="img/cucumber.jpg"width="30" height="30">' +
+    '<img src="img/cucumber.jpg"width="30" height="30">' +
+    '<img src="img/cucumber.jpg"width="30" height="30">' +
+    '<img src="img/cucumber.jpg"width="30" height="30">' +
+    '        <div onclick="userProfile(this)">Name of the user <img onclick="googlemaps()" src="img/google_maps.jpg"width="85" height="60">' +
+    '<img onclick="contactar()" src="img/IMG_4756.JPG"width="72" height="72"></div></div></h3>' +
+
+    '    <h4><div class="ranking">' +
+
+
+    '        </div></h4>' +
+    '    <blockquote>Description of the food. Expires date. More information. Description of the food. Expires date. More information</blockquote>' +
+
+    '        </div>' +
+    '        </div>';
+    $('#tochange').empty();
+
+    $('#tochange').append(ret);
+}
+
+function googlemaps(){
+    window.open('https://www.google.co.nz/maps/@-36.9066952,174.698295,14z?hl=es-419','_blank','location=no')
 }

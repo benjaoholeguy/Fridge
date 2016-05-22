@@ -87,4 +87,3 @@ div.container {
    z-index:998; height:100%; width:100%;
    display:none; -webkit-transition: all 0.2s;
 }
-div#estado { color:#900; font-size:3em; }
