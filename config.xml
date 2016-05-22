@@ -27,6 +27,7 @@
     <platform name="android" />
 
     <gap:plugin name="org.apache.cordova.console" />
+    <gap:plugin name="cordova-plugin-inappbrowser" />
 
     <icon platform="android" src="img/fridge_icon.png" />
 

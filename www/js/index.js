@@ -256,5 +256,5 @@ var ret='<div class="row">' +
 }
 
 function googlemaps(){
-    window.open('https://www.google.co.nz/maps/@-36.9066952,174.698295,14z?hl=es-419','_blank','location=no')
+    window.open('https://maps.google.com/','_blank','location=no')
 }
