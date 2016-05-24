@@ -120,13 +120,7 @@ function list(){
     }
     ret+='</select></div>';
     ret+='<div id="tochange">';
-    if(localStorage.img){
-        ret+='<div class="col-lg-3 col-md-4 col-xs-6 thumb">' +
-            '<a class="thumbnail" href="#">' +
-            '<img onclick="selected('+i+')" class="img-responsive" src="'+localStorage.img+'" alt="">' +
-            '</a>' +
-            '</div>';
-    }
+
     for (var i=1; i<11; i++){
         ret+='<div class="col-lg-3 col-md-4 col-xs-6 thumb">' +
             '<a class="thumbnail" href="#">' +
@@ -156,7 +150,6 @@ function food_upload(){
     var ret='<div class="col-lg-12"><h1 class="page-header">Food Upload</h1></div>';
     ret+='<div class="loginform col-xs-12">' +
         '        <form id="f1">' +
-        '        <input placeholder="Username" id="usr" type="text" class="form-control">' +
         ' <select id="usr" type="text" class="form-control sel">';
     for(var i=1; i<32; i++){
         ret+= '<option>'+i+'</option>';
@@ -174,16 +167,14 @@ function food_upload(){
         '<option>1970</option>' +
         '<option>1971</option>' +
         '</select>' +
-        '        <input id="email" placeholder="Email" type="text" class="form-control">' +
-        '        <input id="phone" placeholder="Phone number" type="text" class="form-control">' +
-        '        <input id="address" placeholder="Address" type="text" class="form-control">' +
 
         '        <div class="form-add">' +
         '        <input class="btn btn-default form-submit" type="button" onclick="take_picture()" id="register" value="Picture">' +
         '                    </div>' +
 
         '    </form>' +
-        '    </div>';
+        '    </div>' +
+        '<div id="pic"></div>';
     return ret;
 }
 
@@ -316,7 +307,7 @@ function take_picture(){
     function onSuccess(imageURI) {
         var image = document.getElementById('myImage');
         image.src = imageURI;
-        localStorage.setItem("img", imageURI);
+        $("#pic").html("<img src='"+image.src+"'>");
     }
 
     function onFail(message) {
