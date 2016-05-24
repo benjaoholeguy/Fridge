@@ -301,26 +301,24 @@ function googlemaps(){
 }
 
 function take_picture(){
-    navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
-        destinationType: Camera.DestinationType.FILE_URI });
+    var srcType = Camera.PictureSourceType.CAMERA;
+    var options = setOptions(srcType);
+    var func = createNewFileEntry;
 
-    function onSuccess(imageURI) {
-        window.resolveLocalFileSystemURL(imgUri, function success(fileEntry) {
+    navigator.camera.getPicture(function cameraSuccess(imageUri) {
 
-            // Do something with the FileEntry object, like write to it, upload it, etc.
-            // writeFile(fileEntry, imgUri);
-            //$("#pic").html(fileEntry.fullPath);
-            // displayFileData(fileEntry.nativeURL, "Native URL");
-            alert(fileEntry.nativeURL);
+        displayImage(imageUri);
+        // You may choose to copy the picture, save it somewhere, or upload.
+        func(imageUri);
 
-        }, function () {
-            // If don't get the FileEntry (which may happen when testing
-            // on some emulators), copy to a new FileEntry.
-            createNewFileEntry(imgUri);
-        });
-    }
+    }, function cameraError(error) {
+        console.debug("Unable to obtain picture: " + error, "app");
 
-    function onFail(message) {
-        alert('Failed because: ' + message);
-    }
+    }, options);
+}
+
+function displayImage(imgUri) {
+
+    var elem = document.getElementById('imageFile');
+    elem.src = imgUri;
 }
