@@ -57,6 +57,11 @@ var menusel = function(e) {
         //$("#estado").html(contact());
         //location.href="content.html";
     }
+    if ($(e).text()=="Food Upload"){
+        $("#estado").html(food_upload());
+        //$("#estado").html(contact());
+        //location.href="content.html";
+    }
     //$("#estado").html($(e).text()+' Selected');
 };
 
@@ -132,6 +137,41 @@ function contact(){
         '        <textarea placeholder="Message" id="pass" class="form-control txta"></textarea>' +
         '        <div class="form-add">' +
         '        <input class="btn btn-default form-submit" type="button" onclick="validate()" id="login" value="Send">' +
+        '                    </div>' +
+
+        '    </form>' +
+        '    </div>';
+    return ret;
+}
+
+function food_upload(){
+    var ret='<div class="col-lg-12"><h1 class="page-header">Food Upload</h1></div>';
+    ret+='<div class="loginform col-xs-12">' +
+        '        <form id="f1">' +
+        '        <input placeholder="Username" id="usr" type="text" class="form-control">' +
+        ' <select id="usr" type="text" class="form-control sel">';
+    for(var i=1; i<32; i++){
+        ret+= '<option>'+i+'</option>';
+    }
+
+
+    ret+='</select>' +
+        '        <select id="usr" type="text" class="form-control sel">';
+    var meses=["January","February","March","April","May","June","July","August","September","October","November","December"];
+    for(var i=0; i<12; i++) {
+        ret+='<option>'+meses[i]+'</option>';
+    }
+    ret+='</select>' +
+        '        <select id="usr" type="text" class="form-control sel">' +
+        '<option>1970</option>' +
+        '<option>1971</option>' +
+        '</select>' +
+        '        <input id="email" placeholder="Email" type="text" class="form-control">' +
+        '        <input id="phone" placeholder="Phone number" type="text" class="form-control">' +
+        '        <input id="address" placeholder="Address" type="text" class="form-control">' +
+
+        '        <div class="form-add">' +
+        '        <input class="btn btn-default form-submit" type="button" onclick="validate()" id="register" value="Submit">' +
         '                    </div>' +
 
         '    </form>' +
