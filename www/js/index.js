@@ -120,6 +120,13 @@ function list(){
     }
     ret+='</select></div>';
     ret+='<div id="tochange">';
+    if(localStorage.img){
+        ret+='<div class="col-lg-3 col-md-4 col-xs-6 thumb">' +
+            '<a class="thumbnail" href="#">' +
+            '<img onclick="selected('+i+')" class="img-responsive" src="'+localStorage.img+'" alt="">' +
+            '</a>' +
+            '</div>';
+    }
     for (var i=1; i<11; i++){
         ret+='<div class="col-lg-3 col-md-4 col-xs-6 thumb">' +
             '<a class="thumbnail" href="#">' +
@@ -309,6 +316,7 @@ function take_picture(){
     function onSuccess(imageURI) {
         var image = document.getElementById('myImage');
         image.src = imageURI;
+        localStorage.setItem("img", imageURI);
     }
 
     function onFail(message) {
