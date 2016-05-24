@@ -10,6 +10,7 @@ var app = {
     onDeviceReady: function() {
         new FastClick(document.body);
         app.receivedEvent('deviceready');
+        console.log(navigator.camera);
     },
     receivedEvent: function(id) {}
 };
@@ -171,7 +172,7 @@ function food_upload(){
         '        <input id="address" placeholder="Address" type="text" class="form-control">' +
 
         '        <div class="form-add">' +
-        '        <input class="btn btn-default form-submit" type="button" onclick="validate()" id="register" value="Submit">' +
+        '        <input class="btn btn-default form-submit" type="button" onclick="take_picture()" id="register" value="Picture">' +
         '                    </div>' +
 
         '    </form>' +
@@ -179,8 +180,10 @@ function food_upload(){
     return ret;
 }
 
+
 function personal_data(){
-    var ret='<div class="loginform col-xs-12">' +
+    var ret='<div class="col-lg-12"><h1 class="page-header">Personal Data</h1></div>';
+    ret+='<div class="loginform col-xs-12">' +
         '        <form id="f1">' +
         '        <input placeholder="Username" id="usr" type="text" class="form-control">' +
         ' <select id="usr" type="text" class="form-control sel">';
@@ -297,4 +300,18 @@ var ret='<div class="row">' +
 
 function googlemaps(){
     window.open("https://www.google.co.nz/maps/dir/264+Whitney+Street,+Auckland/PAK'nSAVE+Mt+Albert,+Auckland,+Regi%C3%B3n+de+Auckland/@-36.9060588,174.6976587,15z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x6d0d46a1b67afffb:0x602aef6b8e46b7d7!2m2!1d174.7092177!2d-36.9194334!1m5!1m1!1s0x6d0d46c384ed334d:0x2254fe9f1fe9c0cf!2m2!1d174.706083!2d-36.8927003?hl=es-419",'_blank','location=no')
+}
+
+function take_picture(){
+    navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+        destinationType: Camera.DestinationType.FILE_URI });
+
+    function onSuccess(imageURI) {
+        var image = document.getElementById('myImage');
+        image.src = imageURI;
+    }
+
+    function onFail(message) {
+        alert('Failed because: ' + message);
+    }
 }
