@@ -301,24 +301,14 @@ function googlemaps(){
 }
 
 function take_picture(){
-    var srcType = Camera.PictureSourceType.CAMERA;
-    var options = setOptions(srcType);
-    var func = createNewFileEntry;
+    navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+        destinationType: Camera.DestinationType.FILE_URI });
 
-    navigator.camera.getPicture(function cameraSuccess(imageUri) {
+    function onSuccess(imageURI) {
 
-        displayImage(imageUri);
-        // You may choose to copy the picture, save it somewhere, or upload.
-        func(imageUri);
+    }
 
-    }, function cameraError(error) {
-        console.debug("Unable to obtain picture: " + error, "app");
-
-    }, options);
-}
-
-function displayImage(imgUri) {
-
-    var elem = document.getElementById('imageFile');
-    elem.src = imgUri;
+    function onFail(message) {
+        alert('Failed because: ' + message);
+    }
 }
