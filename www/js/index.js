@@ -309,8 +309,9 @@ function take_picture(){
 
             // Do something with the FileEntry object, like write to it, upload it, etc.
             // writeFile(fileEntry, imgUri);
-            $("#pic").html(fileEntry.fullPath);
+            //$("#pic").html(fileEntry.fullPath);
             // displayFileData(fileEntry.nativeURL, "Native URL");
+            alert(fileEntry.nativeURL);
 
         }, function () {
             // If don't get the FileEntry (which may happen when testing
