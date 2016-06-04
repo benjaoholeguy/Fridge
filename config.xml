@@ -30,7 +30,7 @@
     <gap:plugin name="cordova-plugin-camera" />
     <gap:plugin name="cordova-plugin-inappbrowser" />
 
-    <plugin name="plugin.google.maps.menusito" spec="1.2.5" source="pgb" />
+    <plugin name="cordova-plugin-googlemaps" source="npm" />
     <icon platform="android" src="img/fridge_icon.png" />
     <preference name="android-build-tool" value="gradle" />
 
