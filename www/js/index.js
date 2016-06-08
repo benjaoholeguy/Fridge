@@ -71,6 +71,11 @@ var menusel = function(e) {
         //$("#estado").html(contact());
         //location.href="index.html";
     }
+    if ($(e).text()=="Ranking"){
+        $("#estado").html(ranking());
+        //$("#estado").html(contact());
+        //location.href="index.html";
+    }
     //$("#estado").html($(e).text()+' Selected');
 };
 
@@ -321,4 +326,26 @@ function take_picture(){
     function onFail(message) {
         alert('Failed because: ' + message);
     }
+}
+
+function ranking(){
+    var ret='<div class="col-lg-12"><h1 class="page-header">Ranking</h1></div>';
+    ret+='<div class="loginform col-xs-12">' +
+        '        <form id="f1">' +
+        '        <input placeholder="Username" id="usr" type="text" class="form-control">' +
+
+        '        <textarea cols="35" rows="50" style="margin-top: 0px; margin-bottom: 11.1875px; height: 124px;" placeholder="Description" type="text" class="form-control"></textarea>' +
+        '<img src="img/cucumber.png"width="20" height="30">' +
+    '<img src="img/cucumber.png"width="20" height="30">' +
+    '<img src="img/cucumber.png"width="20" height="30">' +
+    '<img src="img/cucumber.png"width="20" height="30">' +
+        '<img src="img/cucumber.png"width="20" height="30">' +
+
+        '        <div class="form-add">' +
+        '        <input class="btn btn-default form-submit" type="button" onclick="validate()" id="register" value="Submit">' +
+        '                    </div>' +
+
+        '    </form>' +
+        '    </div>';
+    return ret;
 }

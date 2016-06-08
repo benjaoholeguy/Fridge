@@ -33,7 +33,7 @@
                 top: 0;
                 left: 0;
             }
-            img{
+            img#prueba{
                 position: absolute;
                 bottom: 5px;
                 right: 10px;
@@ -45,7 +45,7 @@
     <body>
    <img alt="full screen background image" src="img/maps_img.png" id="full-screen-background-image" />
 
-   <img alt="full screen background image" src="img/caja_transparente.png" usemap="#map" />
+   <img alt="full screen background image" id="prueba" src="img/caja_transparente.png" usemap="#map" />
     <map name="map">
         <area shape="rect" coords="0,0,300,300" alt="Sun" href="login.html">
 
@@ -56,7 +56,7 @@
    <div class="header">
             <div onclick="elmenu()" class="buttonHeader buttonLeft ion-navicon"></div>
                 FRIDGE
-           <!-- <div onclick="openOptions()" class="buttonHeader buttonRight ion-share"></div>-->
+            <div onclick="openOptions()" class="buttonHeader buttonRight ion-share"></div>
         <div></div>
         </div>
         <div id="containerShare" class="bottomContent transition">
