@@ -85,7 +85,45 @@ var menusel = function(e) {
 function mostrarlista(){
     //alert("viene desde el mapa")
     $("#full-screen-background-image").remove();
-    $("#estado").html(list());
+    $("#estado").html(listaux());
+}
+
+function listaux(){
+    var ret='<div class="col-lg-12"><h1 class="page-header">Food</h1></div>';
+    ret+='<div class="filter"></select>' +
+        '        <select onchange="changeFood(this)" id="zones" type="text" class="form-control sel">' +
+        '<option>Select your zone</option>';
+    var zones=["CBD","Blockhouse Bay","Ramuera","New Lynn","Albany","North Shore"];
+    for(var i=0; i<zones.length; i++) {
+        ret+='<option>'+zones[i]+'</option>';
+    }
+    ret+='</select>';
+    ret+='</select>' +
+        '        <select onchange="changeFood(this)" id="expires" type="text" class="form-control sel">' +
+        '<option>Expire Date</option>';
+    var expires=["Today","Tomorrow"];
+    for(var i=0; i<expires.length; i++) {
+        ret+='<option>'+expires[i]+'</option>';
+    }
+    ret+='</select>' +
+        '        <select onchange="changeFood(this)" id="category" type="text" class="form-control sel">' +
+        '<option>Category</option>';
+    var cat=["Meet","Fruit","Fish","Cereals"];
+    for(var i=0; i<cat.length; i++) {
+        ret+='<option>'+cat[i]+'</option>';
+    }
+    ret+='</select></div>';
+    ret+='<div id="tochange">';
+
+    //for (var i=1; i<11; i++){
+        ret+='<div class="col-lg-3 col-md-4 col-xs-6 thumb">' +
+            '<a class="thumbnail" href="#">' +
+            '<img onclick="selected(1)" class="img-responsive" src="img/food/'+i+'.jpg" alt="">' +
+            '</a>' +
+            '</div>';
+    //}
+    ret+='</div>';
+    return ret;
 }
 
 function closeOptions(){
