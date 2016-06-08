@@ -38,6 +38,11 @@
                 bottom: 5px;
                 right: 10px;
             }
+            img#prueba1{
+                position: absolute;
+                bottom: 305px;
+                right: 10px;
+            }
         </style>
 
         <title>Fridge</title>
@@ -46,12 +51,16 @@
    <img alt="full screen background image" src="img/maps_img.png" id="full-screen-background-image" />
 
    <img alt="full screen background image" id="prueba" src="img/caja_transparente.png" usemap="#map" />
+   <img alt="full screen background image" id="prueba1" src="img/caja_transparente.png" usemap="#map1" />
     <map name="map">
         <area shape="rect" coords="0,0,300,300" alt="Sun" href="login.html">
 
     </map>
 
+   <map name="map1">
+       <area shape="rect" coords="0,0,300,300" alt="Sun" onclick="mostrarlista()">
 
+   </map>
 
    <div class="header">
             <div onclick="elmenu()" class="buttonHeader buttonLeft ion-navicon"></div>

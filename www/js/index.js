@@ -82,6 +82,11 @@ var menusel = function(e) {
 /*function openOptions(){
     document.getElementById("containerShare").className = "centerContent transition";
 }*/
+function mostrarlista(){
+    //alert("viene desde el mapa")
+    $("#full-screen-background-image").remove();
+    $("#estado").html(list());
+}
 
 function closeOptions(){
     document.getElementById("containerShare").className = "bottomContent transition";
