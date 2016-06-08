@@ -22,12 +22,17 @@ var elmenu = function() {
         $("#content").removeClass('menuopen');
         $(".lopen").removeClass('open');
         $("#menu").removeClass('menus');
-        $("#estado").html('<img src="img/maps_img.png" width="100%" height="100%">');
+        //$("#estado").html('<img src="img/maps_img.png" width="100%" height="100%">');
+        /*var imageUrl="img/maps_img.png";
+        $("body").css('background-image', 'url(' + imageUrl + ')');*/
+
     } else {
         $("#content").addClass('menuopen');
         $("#menu").addClass('menus');
         $(".lopen").addClass('open');
-        $("#estado").html('<img src="img/maps_img.png" width="100%" height="100%">');
+        //$("#estado").html('<img src="img/maps_img.png" width="100%" height="100%">');
+        /*var imageUrl="img/maps_img.png";
+        $("body").css('background-image', 'url(' + imageUrl + ')');*/
     }
 }
 /* cuando da click en un área diferente al menú */
@@ -38,37 +43,40 @@ var cierramenu = function() {
         $("#content").removeClass('menuopen');
         $(".lopen").removeClass('open');
         $("#menu").removeClass('menus');
-        $("#estado").html('<img src="img/maps_img.png" width="100%" height="100%">');
+        //$("#estado").html('<img src="img/maps_img.png" width="100%" height="100%">');
+        /*var imageUrl="img/maps_img.png";
+        $("body").css('background-image', 'url(' + imageUrl + ')');*/
     }
     $(".lopen").removeClass('open');
 };
 /* cuando elige alguna opción del menu... */
 var menusel = function(e) {
+    $("#full-screen-background-image").remove();
     cierramenu();
     if ($(e).text()=="Messages"){
         $("#estado").html(contact());
-        //location.href="content.html";
+        //location.href="index.html";
     }
     if ($(e).text()=="Food List"){
         $("#estado").html(list());
-        //location.href="content.html";
+        //location.href="index.html";
     }
     if ($(e).text()=="Personal Data"){
         $("#estado").html(personal_data());
         //$("#estado").html(contact());
-        //location.href="content.html";
+        //location.href="index.html";
     }
     if ($(e).text()=="Food Upload"){
         $("#estado").html(food_upload());
         //$("#estado").html(contact());
-        //location.href="content.html";
+        //location.href="index.html";
     }
     //$("#estado").html($(e).text()+' Selected');
 };
 
-function openOptions(){
+/*function openOptions(){
     document.getElementById("containerShare").className = "centerContent transition";
-}
+}*/
 
 function closeOptions(){
     document.getElementById("containerShare").className = "bottomContent transition";
@@ -150,7 +158,7 @@ function food_upload(){
     var ret='<div class="col-lg-12"><h1 class="page-header">Food Upload</h1></div>';
     ret+='<div class="loginform col-xs-12">' +
         '        <form id="f1">' +
-        ' <select id="usr" type="text" class="form-control sel">';
+        '<div><label>Deadline</label></div> <select id="usr" type="text" class="form-control sel">';
     for(var i=1; i<32; i++){
         ret+= '<option>'+i+'</option>';
     }
@@ -163,15 +171,15 @@ function food_upload(){
         ret+='<option>'+meses[i]+'</option>';
     }
     ret+='</select>' +
-        '        <select id="usr" type="text" class="form-control sel">' +
-        '<option>1970</option>' +
-        '<option>1971</option>' +
-        '</select>' +
+            '        <div><textarea placeholder="Description" cols="35" rows="10"></textarea></div>' +
 
         '        <div class="form-add">' +
-        '        <input class="btn btn-default form-submit" type="button" onclick="take_picture()" id="register" value="Picture">' +
+        '        <input  src="img/camara.png" width="50px" height="50px" type="image" onclick="take_picture()" id="register" value="Picture">' +
+       /* '                    </div>' +
+        '        <div class="form-add">' +*/
+        '        <input  src="img/buscar.jpg" width="40px" height="40px" type="image" onclick="take_picture()" id="register" value="Picture">' +
+        '        <input  src="img/google_maps.jpg" width="55px" height="40px" type="image" onclick="take_picture()" id="register" value="Picture">' +
         '                    </div>' +
-
         '    </form>' +
         '    </div>' +
         '<div id="pic"></div>';
