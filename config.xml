@@ -25,12 +25,11 @@
     <preference name="android-installLocation" value="auto" />
 
     <platform name="android" />
-
     <gap:plugin name="org.apache.cordova.console" />
     <gap:plugin name="cordova-plugin-camera" />
     <gap:plugin name="cordova-plugin-inappbrowser" />
-<!-- API_KEY_FOR_ANDROID="AIzaSyDkrCouYA9oHv2w25Y93FJSPNPwoiOAAuk"-->
-    <plugin name="cordova-plugin-googlemaps" source="npm" />
+<!-- API_KEY_FOR_ANDROID="AIzaSyDkrCouYA9oHv2w25Y93FJSPNPwoiOAAuk"
+    <plugin name="cordova-plugin-googlemaps" source="npm" />-->
     <icon platform="android" src="img/fridge_icon.png" />
     <preference name="android-build-tool" value="gradle" />
 
